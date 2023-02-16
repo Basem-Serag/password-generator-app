@@ -1,3 +1,54 @@
-p {
-  font-family: Lato;
+h1,
+label,
+input {
+  font-family: Poppins;
+}
+
+h1 {
+  color: #373b79;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.form-control {
+  outline: none;
+  box-shadow: none;
+  font-size: 14px;
+  color: #292b2e;
+}
+
+.form-control:focus {
+  border-color: #cfd1f8;
+}
+
+label {
+  color: #6c757d;
+}
+.form-floating > .form-control {
+  height: 45px;
+}
+
+.form-floating > label {
+  padding: 10px;
+}
+
+.form-check-input:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #373b79;
+}
+
+.form-check-input:checked {
+  background-color: #cfd1f8;
+  border-color: #373b79;
+}
+
+.btn {
+  background-color: #848cff;
+  border: 0;
+  height: 40px;
+}
+
+.btn:hover {
+  background-color: #6f77f4;
 }
