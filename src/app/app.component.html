@@ -4,10 +4,11 @@
       <h1 class="pb-4">Password Generator</h1>
       <div class="form-floating mb-3">
         <input
-          type="email"
+          type="text"
           class="form-control px-4"
           id="floatingInput"
           placeholder="name@example.com"
+          (input)="onLengthChange($any($event.target).value)"
         />
         <label for="floatingInput" class="px-4">Length</label>
       </div>
@@ -15,8 +16,8 @@
         <input
           class="form-check-input"
           type="checkbox"
-          value=""
           id="checkLetters"
+          (change)="onLettersChange()"
         />
         <label class="form-check-label" for="checkLetters"> Use Letters </label>
       </div>
@@ -27,6 +28,7 @@
           type="checkbox"
           value=""
           id="checkNumbers"
+          (change)="onNumbersChange()"
         />
         <label class="form-check-label" for="checkNumbers"> Use Numbers </label>
       </div>
@@ -37,16 +39,28 @@
           type="checkbox"
           value=""
           id="checkSymbols"
+          (change)="onSymbolsChange()"
         />
         <label class="form-check-label" for="checkSymbols"> Use Symbols </label>
       </div>
-      <button class="btn btn-primary mt-2">Generate!</button>
+
+      <button
+        [disabled]="
+          !(lenght && (includeLetters || includeNumbers || includeSymblos))
+        "
+        class="btn btn-primary mt-2"
+        (click)="onGenerate()"
+      >
+        Generate!
+      </button>
+
       <div class="form-floating mb-3 mt-4">
         <input
-          type="email"
+          type="text"
           class="form-control px-4"
           id="floatingInput"
           placeholder="name@example.com"
+          [value]="generatedPassword"
         />
         <label for="floatingInput" class="px-4">Your Password</label>
       </div>
