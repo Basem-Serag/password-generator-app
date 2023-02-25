@@ -52,3 +52,11 @@ label {
 .btn:hover {
   background-color: #6f77f4;
 }
+
+.password-input input {
+  border-color: #373b79 !important;
+}
+
+.password-input label {
+  color: #373b79 !important;
+}

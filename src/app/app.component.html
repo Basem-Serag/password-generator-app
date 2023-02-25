@@ -48,17 +48,21 @@
         [disabled]="
           !(lenght && (includeLetters || includeNumbers || includeSymblos))
         "
-        class="btn btn-primary mt-2"
+        class="btn btn-primary my-4"
         (click)="onGenerate()"
       >
         Generate!
       </button>
 
-      <div class="form-floating mb-3 mt-4">
+      <div
+        class="form-floating mx-auto mb-3 password-input"
+        *ngIf="generatedPassword"
+      >
         <input
           type="text"
-          class="form-control px-4"
+          class="form-control px-4 border-end border-start mx-auto border-0"
           id="floatingInput"
+          readonly
           placeholder="name@example.com"
           [value]="generatedPassword"
         />
